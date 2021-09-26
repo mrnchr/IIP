@@ -15,4 +15,7 @@ int main() {
 		}
 	}
 	else cout << "No" << endl;
+
+	system("pause");
+	return 0;
 }
