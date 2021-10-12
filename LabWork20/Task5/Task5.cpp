@@ -23,7 +23,8 @@ double S(point a, point b, point c) {
 
 int main() {
 	int N;
-	point *a, A, B, C;
+	point* a;
+	int inA, inB, inC;
 	double  maxS, maxD;
 
 	cout << "Enter size of the array: ";
@@ -43,23 +44,31 @@ int main() {
 		for (int j(i + 1); j < N; j++) {
 			if (d(a[i], a[j]) > maxD) {
 				maxD = d(a[i], a[j]);
-				A = a[i];
-				B = a[j];
+				inA = i;
+				inB = j;
 			}
 		}
 	}
 
 	for (int i(0); i < N; i++) {
-		if (maxS < S(A, B, a[i])) {
-			maxS = S(A, B, a[i]);
-			C = a[i];
+		if (maxS < S(a[inA], a[inB], a[i])) {
+			maxS = S(a[inA], a[inB], a[i]);
+			inC = i;
 		}
 	}
 
 	cout << "Points forming the biggest triangle: \n";
-	cout << A.x << " " << A.y << endl;
-	cout << B.x << " " << B.y << endl;
-	cout << C.x << " " << C.y << endl;
+	
+	if (inA > inB)
+		swap(inA, inB);
+	if (inC < inB)
+		swap(inC, inB);
+	if (inC < inA)
+		swap(inC, inA);
+	
+	cout << a[inA].x << " " << a[inA].y << endl;
+	cout << a[inB].x << " " << a[inB].y << endl;
+	cout << a[inC].x << " " << a[inC].y << endl;
 
 	system("pause");
 	delete[] a;
