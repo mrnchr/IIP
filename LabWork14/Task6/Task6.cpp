@@ -11,12 +11,15 @@ int main() {
 	cin >> N;
 
 	k1 = 1;
-	k2 = 1;
+	k2 = 0;
 
-	while (k1 != N) {
-		k1 = k1 + k2;
-		k2 = k1 - k2;
-		index++;
+	if (N == 0) index--;
+	else if (N != 1) {
+		while (k1 != N) {
+			k1 = k1 + k2;
+			k2 = k1 - k2;
+			index++;
+		}
 	}
 
 	cout << "Answer: " << index << endl;

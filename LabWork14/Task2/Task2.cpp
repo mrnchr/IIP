@@ -10,7 +10,7 @@ int main() {
 	cin >> a >> b;
 
 	ost = a;
-	while (ost > b) {
+	while (ost >= b) {
 		ost -= b;
 	}
 
