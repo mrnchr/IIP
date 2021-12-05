@@ -64,7 +64,7 @@ void TaskChoiceMenu(int numLab) {
 	
 	while (userChoice != 0) {
 		std::cout << "Введите номер задачи, чтобы запустить программу\n";
-		std::cout << "Поставьте перед номером минус, чтобы посмотреть код программы\n";
+		std::cout << "Поставьте перед номером минус для отладки исходного кода программы\n";
 		std::cout << "Введите 0, чтобы выбрать другую лабораторную работу\n";
 		std::cout << "Ваш выбор: ";
 		std::cin >> userChoice;
@@ -92,7 +92,7 @@ void TaskChoiceMenu(int numLab) {
 		else {
 			// Вывод исходного кода
 			std::string s = FullCodePath;
-			Command = "type " + s;
+			Command = "start " + s;
 			system(&Command[0]);
 
 			std::cout << std::endl;
