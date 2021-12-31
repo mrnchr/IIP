@@ -70,7 +70,7 @@ void TaskChoiceMenu(int numLab) {
 		std::cin >> userChoice;
 
 		// Получение полного пути файла программы и исходного кода
-		LocalPath = "LabWorks\\LabWork" + std::to_string(numLab) + "\\Task" + std::to_string(abs(userChoice)) + "\\Task" + std::to_string(abs(userChoice));
+		LocalPath = "C++\\LabWork" + std::to_string(numLab) + "\\Task" + std::to_string(abs(userChoice)) + "\\Task" + std::to_string(abs(userChoice));
 
 		ProgramPath = LocalPath + ".exe";
 		GetFullPathName(&ProgramPath[0], 100, FullProgramPath, nullptr);
